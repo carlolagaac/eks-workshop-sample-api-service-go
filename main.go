@@ -43,12 +43,12 @@ func main() {
 type response struct {
 	Message string   `json:"message"`
 	EnvVars []string `json:"env"`
-	Fib     []int64    `json:"fib"`
+	Fib     []uint64    `json:"fib"`
 }
 
-func fib() func() int64 {
+func fib() func() uint64 {
 	a, b := 0, 1
-	return func() int64 {
+	return func() uint64 {
 		a, b = b, a+b
 		return a
 	}
