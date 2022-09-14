@@ -46,9 +46,9 @@ type response struct {
 	Fib     []int    `json:"fib"`
 }
 
-func fib() func() int {
+func fib() func() int64 {
 	a, b := 0, 1
-	return func() int {
+	return func() int64 {
 		a, b = b, a+b
 		return a
 	}
