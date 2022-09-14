@@ -23,7 +23,7 @@ func main() {
 		}
 		sort.Strings(res.EnvVars)
 
-		for i := 1; i <= 100; i++ {
+		for i := 1; i <= 90; i++ {
 			res.Fib = append(res.Fib, f())
 		}
 
@@ -43,12 +43,12 @@ func main() {
 type response struct {
 	Message string   `json:"message"`
 	EnvVars []string `json:"env"`
-	Fib     []uint64    `json:"fib"`
+	Fib     []int    `json:"fib"`
 }
 
-func fib() func() uint64 {
+func fib() func() int {
 	a, b := 0, 1
-	return func() uint64 {
+	return func() int {
 		a, b = b, a+b
 		return a
 	}
