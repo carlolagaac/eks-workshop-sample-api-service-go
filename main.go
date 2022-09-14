@@ -43,7 +43,7 @@ func main() {
 type response struct {
 	Message string   `json:"message"`
 	EnvVars []string `json:"env"`
-	Fib     []int    `json:"fib"`
+	Fib     []int64    `json:"fib"`
 }
 
 func fib() func() int64 {
